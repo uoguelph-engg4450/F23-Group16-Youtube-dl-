@@ -215,6 +215,7 @@ from .channel9 import Channel9IE
 from .charlierose import CharlieRoseIE
 from .chaturbate import ChaturbateIE
 from .chilloutzone import ChilloutzoneIE
+from .chelseafc import ChelseafcIE
 from .chirbit import (
     ChirbitIE,
     ChirbitProfileIE,
@@ -553,6 +554,7 @@ from .jamendo import (
 )
 from .jeuxvideo import JeuxVideoIE
 from .jove import JoveIE
+from .kick import KickIE
 from .joj import JojIE
 from .jwplatform import JWPlatformIE
 from .kakao import KakaoIE
@@ -994,6 +996,10 @@ from .pr0gramm import (
 from .puhutv import (
     PuhuTVIE,
     PuhuTVSerieIE,
+)
+from .pr0gramm import (
+    Pr0grammIE,
+    Pr0grammStaticIE,
 )
 from .presstv import PressTVIE
 from .prosiebensat1 import ProSiebenSat1IE
