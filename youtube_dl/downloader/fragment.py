@@ -52,8 +52,13 @@ class FragmentFD(FileDownloader):
 
     This feature is experimental and file format may change in future.
     """
-
     def report_retry_fragment(self, err, frag_index, count, retries):
+        print("\n\n")
+        print(self.params)
+        #get the retry delay
+        #if non zero then treat that value as initial delay 
+        #sleep for initial delay and then increment delay
+        print("\n\n")
         self.to_screen(
             '[download] Got server HTTP error: %s. Retrying fragment %d (attempt %d of %s)...'
             % (error_to_compat_str(err), frag_index, count, self.format_retries(retries)))

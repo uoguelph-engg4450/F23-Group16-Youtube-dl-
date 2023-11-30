@@ -26,7 +26,7 @@ class FlakyHTTPHandler(http.server.SimpleHTTPRequestHandler):
         if ( 5 > current_time - start_time > 3):
             self.send_error(404)
             return
-        elif ( 20 > current_time - start_time > 7):
+        elif ( 20 > current_time - start_time > 7 ):
             self.send_error(404)
             return
         super().do_GET()
@@ -43,7 +43,7 @@ server_thread.start()
 def download_with_youtube_dl():
     url = 'http://127.0.0.1:8000/test_fragments.m3u8'
     try:
-        subprocess.run(['python', '-m', 'youtube_dl','--hls-prefer-native', '--abort-on-unavailable-fragment', url ], check=False)
+        subprocess.run(['python', '-m', 'youtube_dl','--hls-prefer-native','--retry-delay', '200',  '--abort-on-unavailable-fragment', url ], check=False)
         print("Download completed successfully.")
     except subprocess.CalledProcessError as e:
         print("youtube-dl failed with error:", e)
