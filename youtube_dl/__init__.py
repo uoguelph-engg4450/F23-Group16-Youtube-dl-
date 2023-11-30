@@ -435,6 +435,8 @@ def _real_main(argv=None):
         # just for deprecation check
         'autonumber': opts.autonumber if opts.autonumber is True else None,
         'usetitle': opts.usetitle if opts.usetitle is True else None,
+        'retry_delay_en': opts.retry_delay_en,
+        'retry_delay': opts.retry_delay,
     }
 
     with YoutubeDL(ydl_opts) as ydl:

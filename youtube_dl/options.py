@@ -453,6 +453,14 @@ def parseOpts(overrideArguments=None):
         dest='ratelimit', metavar='RATE',
         help='Maximum download rate in bytes per second (e.g. 50K or 4.2M)')
     downloader.add_option(
+        '--retry-delay-en',
+        dest='retry_delay_en', action='store_true', default=False,
+        help='Enables a delay between fragment download retries')
+    downloader.add_option(
+        '--retry-delay',
+        dest='retry_delay', metavar='RETRY_DELAY', default=0,
+        help='Sets the period of time in ')
+    downloader.add_option(
         '-R', '--retries',
         dest='retries', metavar='RETRIES', default=10,
         help='Number of retries (default is %default), or "infinite".')
