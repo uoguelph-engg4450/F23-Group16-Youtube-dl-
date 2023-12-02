@@ -56,18 +56,16 @@ class FragmentFD(FileDownloader):
     retry_counter = 0
 
     def report_retry_fragment(self, err, frag_index, count, retries):
-        print("\n\n")
-        print(self.params)
-
+        #grab initial delay from parameters
         initial_delay = self.params.get("retry_delay", 0)
         mili_delay = float(initial_delay) / 1000
         retry_delay = mili_delay * (self.retry_counter + 1)
-
+        #delay
         time.sleep(retry_delay)
 
+        #increase for next delay
         self.retry_counter += 1
 
-        print("\n\n")
         self.to_screen(
             "[download] Got server HTTP error: %s. Retrying fragment %d (attempt %d of %s)..."
             % (
@@ -146,6 +144,7 @@ class FragmentFD(FileDownloader):
             ctx["dest_stream"].write(frag_content)
             ctx["dest_stream"].flush()
         finally:
+            #reset retry counter
             self.retry_counter = 0
             if self.__do_ytdl_file(ctx):
                 self._write_ytdl_file(ctx)
