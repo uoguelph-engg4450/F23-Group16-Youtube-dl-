@@ -54,7 +54,7 @@ def download_with_youtube_dl():
                 "youtube_dl",
                 "--hls-prefer-native",
                 "--retry-delay",
-                "200",
+                "500",
                 "--abort-on-unavailable-fragment",
                 url,
             ],
